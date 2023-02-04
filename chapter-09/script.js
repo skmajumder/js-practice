@@ -77,10 +77,48 @@ const restaurant = {
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// ** Replacing (NOTE: You can replace the whole word)
+
+// const priceGB = '288,97£';
+// const priceUS = priceGB.replace('£', '$').replace(',', '.');
+// console.log(priceUS);
+
+// ** Replace all
+
+const myString = 'I like dogs because dogs are adorable!';
+const updateMyString = myString.replaceAll('dogs', 'cats');
+console.log(updateMyString);
+console.log(myString.replace(/dogs/g, 'cats'));
+
+// const userName = '  jonas ';
+// console.log(userName.trim());
+
+// const passenger = 'jOnAs'; //Jonas
+// const passengerLower = passenger.toLowerCase();
+// const passengerCorrect =
+//   passengerLower[0].toUpperCase() + passengerLower.slice(1);
+// console.log(passengerCorrect);
+
 // console.log(airline);
 // console.log(airline.length);
 // console.log(airline[8]);
 // console.log(plane[2]);
+
+// ** Check email address
+
+// const email = 'hello@jonas.io';
+// const loginEmail = '  hEllo@jonas.io \n ';
+
+// const trimEmail = loginEmail.trim();
+// const lowerEmail = trimEmail.toLowerCase();
+// console.log(lowerEmail);
+
+// const normalizedEmail = loginEmail.trim().toLowerCase();
+// console.log(normalizedEmail);
+// console.log(email === normalizedEmail);
 
 // console.log('B737'.length);
 // console.log('B737'[1]);
@@ -107,13 +145,13 @@ const plane = 'A320';
 // checkMiddleSeat('20C');
 // checkMiddleSeat('10E');
 
-console.log(new String('jonas'));
+// console.log(new String('jonas'));
 
 // NOTE: JS convert the 'string' into object at the beginning
-console.log(typeof new String('jonas'));
+// console.log(typeof new String('jonas'));
 
 // NOTE: JS return the string object again to the 'string'
-console.log(typeof new String('jonas').slice(0));
+// console.log(typeof new String('jonas').slice(0));
 
 /**
  * @description Maps Iteration
