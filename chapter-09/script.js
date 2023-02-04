@@ -74,11 +74,65 @@ const restaurant = {
  * @description Strings
  */
 
-const airline = 'TAP Air Portugal';
-const plane = 'A320';
+const capitalizationName = function (name) {
+  const names = name.split(' ');
+  const nameUpper = [];
+  for (const word of names) {
+    // nameUpper.push(word[0].toUpperCase() + word.slice(1));
+    nameUpper.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(nameUpper.join(' '));
+};
 
-console.log(airline.toLowerCase());
-console.log(airline.toUpperCase());
+// capitalizationName('jessica ann smith davis');
+// capitalizationName('shuvo majumder');
+
+// ** Padding a string
+
+// const message = 'Go to gate 23';
+// console.log(message.padStart(25, '+'));
+// console.log('JavaScript'.padStart(15, '+'));
+
+const maskCreditCard = function (cardNumber) {
+  const str = cardNumber + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+// console.log(maskCreditCard('5039416734830229'));
+// console.log(maskCreditCard(38428802958024));
+// console.log(maskCreditCard('3659953406906931'));
+
+// ** Repeat a string
+
+const weatherMessage = 'Bad weather... All Departures Delayed... ';
+console.log(weatherMessage.repeat(5));
+
+const planesInLine = planeNumber => {
+  console.log(
+    `There are ${planeNumber} planes in line ${'✈ '.repeat(planeNumber)}`
+  );
+};
+
+planesInLine(20);
+
+// ** String split
+
+// console.log('what+a+beautiful+day+it+is'.split('+'));
+// console.log('what+a+beautiful+day+it+is'.split(' '));
+// console.log('what a beautiful day it is'.split(' '));
+
+// const [firstName, lastName] = 'John Deo'.split(' ');
+// console.log(firstName, lastName);
+
+// const newName = ['Mr.', firstName, lastName].join(' ');
+// console.log(newName);
+
+// const airline = 'TAP Air Portugal';
+// const plane = 'A320';
+
+// console.log(airline.toLowerCase());
+// console.log(airline.toUpperCase());
 
 // ** Replacing (NOTE: You can replace the whole word)
 
@@ -88,10 +142,10 @@ console.log(airline.toUpperCase());
 
 // ** Replace all
 
-const myString = 'I like dogs because dogs are adorable!';
-const updateMyString = myString.replaceAll('dogs', 'cats');
-console.log(updateMyString);
-console.log(myString.replace(/dogs/g, 'cats'));
+// const myString = 'I like dogs because dogs are adorable!';
+// const updateMyString = myString.replaceAll('dogs', 'cats');
+// console.log(updateMyString);
+// console.log(myString.replace(/dogs/g, 'cats'));
 
 // const userName = '  jonas ';
 // console.log(userName.trim());
