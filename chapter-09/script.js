@@ -106,7 +106,7 @@ const maskCreditCard = function (cardNumber) {
 // ** Repeat a string
 
 const weatherMessage = 'Bad weather... All Departures Delayed... ';
-console.log(weatherMessage.repeat(5));
+// console.log(weatherMessage.repeat(5));
 
 const planesInLine = planeNumber => {
   console.log(
@@ -114,7 +114,7 @@ const planesInLine = planeNumber => {
   );
 };
 
-planesInLine(20);
+// planesInLine(20);
 
 // ** String split
 
