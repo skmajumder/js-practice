@@ -143,7 +143,6 @@ const eurowings = {
 };
 
 book.call(eurowings, 23, 'Sarah William');
-console.log(eurowings);
 
 const swiss = {
   airline: 'Swiss Air Lines',
@@ -161,3 +160,42 @@ book.apply(swiss, flightData);
 
 book.call(swiss, ...flightData);
 console.log(swiss);
+
+const bookEW = book.bind(eurowings);
+bookEW(22, 'DB Cooper');
+
+// ** Partial Application
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Eddie Redmayne');
+bookEW23('john Scamander');
+bookEW23('Martha Scamander');
+console.log(eurowings);
+
+// With event listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .getElementById('btn-buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// ** Partial Application
+
+const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+// addVAT = value => value + value * .23
+console.log(addVAT(100));
+console.log(addVAT(200));
+console.log(addVAT(3500));
+
+const addTaxRate = rate => value => {
+  return value + value * rate;
+};
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(100));
