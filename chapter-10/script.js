@@ -105,12 +105,59 @@
 
 // ** Functions Returning Functions
 
-const greet = greeting => name => {
-  console.log(`${greeting}, ${name}`);
+// const greet = greeting => name => {
+//   console.log(`${greeting}, ${name}`);
+// };
+
+// const greetHey = greet('Hey');
+// greetHey('John');
+// greetHey('Jonas');
+
+// greet('Hello')('Alexer');
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  booking: [],
+  book(flightNum, passengerName) {
+    console.log(
+      `${passengerName} booked a sit on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.booking.push({
+      flight: `${this.iataCode}${flightNum}`,
+      passengerName,
+    });
+  },
 };
 
-const greetHey = greet('Hey');
-greetHey('John');
-greetHey('Jonas');
+const book = lufthansa.book;
 
-greet('Hello')('Alexer');
+lufthansa.book(236, 'Jonas');
+lufthansa.book(236, 'Shuvo');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  booking: [],
+};
+
+book.call(eurowings, 23, 'Sarah William');
+console.log(eurowings);
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  booking: [],
+};
+
+book.call(swiss, 33, 'Sara Cooper');
+book.call(swiss, 22, 'Mary Cooper');
+
+// Apply Method
+
+const flightData = [56, 'David Cooper'];
+book.apply(swiss, flightData);
+
+book.call(swiss, ...flightData);
+console.log(swiss);
