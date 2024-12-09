@@ -124,9 +124,7 @@ const calculateTotalBill = (bill) => {
   const tip = getTip(bill);
   const billValue = bill + tip;
 
-  console.log(
-    `The bill was ${bill}, the tip was ${tip}, and the total value ${billValue}`
-  );
+  console.log(`The bill was ${bill}, the tip was ${tip.toFixed(2)}, and the total value ${billValue.toFixed(2)}`);
 };
 
 calculateTotalBill(275);
