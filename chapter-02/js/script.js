@@ -157,27 +157,91 @@
 // console.log(logWarn("This is a Warning message"));
 // console.log(logDebug("This is a Debug message"));
 
-const LOG_LEVELS = [
-  { key: "ERROR", emoji: "❌" },
-  { key: "INFO", emoji: "ℹ️" },
-  { key: "WARN", emoji: "⚠️" },
-  { key: "DEBUG", emoji: "🐞" },
-];
+// const LOG_LEVELS = [
+//   { key: "ERROR", emoji: "❌" },
+//   { key: "INFO", emoji: "ℹ️" },
+//   { key: "WARN", emoji: "⚠️" },
+//   { key: "DEBUG", emoji: "🐞" },
+// ];
 
-const emojiMap = new Map(LOG_LEVELS.map(({ key, emoji }) => [key, emoji]));
+// const emojiMap = new Map(LOG_LEVELS.map(({ key, emoji }) => [key, emoji]));
 
-const log = function (level) {
-  return function (message) {
-    const emoji = emojiMap.get(level) || "";
-    return `[${level} ${emoji}]: ${message}`;
+// const log = function (level) {
+//   return function (message) {
+//     const emoji = emojiMap.get(level) || "";
+//     return `[${level} ${emoji}]: ${message}`;
+//   };
+// };
+
+// const logger = Object.fromEntries(
+//   LOG_LEVELS.map(({ key }) => [key.toLowerCase(), log(key)])
+// );
+
+// console.log(logger.error("This is an Error message"));
+// console.log(logger.info("This is an Info message"));
+// console.log(logger.warn("This is an Warn message"));
+// console.log(logger.debug("This is an DEBUG message"));
+
+// * Recursion
+// function factorial(n) {
+//   if (n === 0) return 1;
+//   return n * factorial(n - 1);
+// }
+
+// console.log(factorial(1));
+
+// (function () {
+//   console.log("IIFE (Immediately Invoked Function Expressions)");
+// })();
+
+// const Counter = () => {
+//   let count = 0;
+
+//   return {
+//     increase: function () {
+//       count++;
+//       console.log(count);
+//     },
+//     decrease: function () {
+//       count--;
+//       console.log(count);
+//     },
+//     reset: function () {
+//       count = 0;
+//       console.log(count);
+//     },
+//   };
+// };
+
+// const counter = Counter();
+
+// counter.increase();
+// counter.increase();
+// counter.increase();
+// counter.increase();
+// counter.decrease();
+// counter.reset();
+
+const CounterIIFE = (() => {
+  let count = 0;
+
+  return {
+    increase: () => {
+      count++;
+      console.log(count);
+    },
+    decrease: () => {
+      count--;
+      console.log(count);
+    },
+    reset: () => {
+      count = 0;
+      console.log(count);
+    },
   };
-};
+})();
 
-const logger = Object.fromEntries(
-  LOG_LEVELS.map(({ key }) => [key.toLowerCase(), log(key)])
-);
-
-console.log(logger.error("This is an Error message"));
-console.log(logger.info("This is an Info message"));
-console.log(logger.warn("This is an Warn message"));
-console.log(logger.debug("This is an DEBUG message"));
+CounterIIFE.increase();
+CounterIIFE.increase();
+CounterIIFE.increase();
+CounterIIFE.increase();
