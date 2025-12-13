@@ -222,26 +222,94 @@
 // counter.decrease();
 // counter.reset();
 
-const CounterIIFE = (() => {
-  let count = 0;
+// const CounterIIFE = (() => {
+//   let count = 0;
 
-  return {
-    increase: () => {
-      count++;
-      console.log(count);
-    },
-    decrease: () => {
-      count--;
-      console.log(count);
-    },
-    reset: () => {
-      count = 0;
-      console.log(count);
-    },
-  };
-})();
+//   return {
+//     increase: () => {
+//       count++;
+//       console.log(count);
+//     },
+//     decrease: () => {
+//       count--;
+//       console.log(count);
+//     },
+//     reset: () => {
+//       count = 0;
+//       console.log(count);
+//     },
+//   };
+// })();
 
-CounterIIFE.increase();
-CounterIIFE.increase();
-CounterIIFE.increase();
-CounterIIFE.increase();
+// CounterIIFE.increase();
+// CounterIIFE.increase();
+// CounterIIFE.increase();
+// CounterIIFE.increase();
+
+// * Function Composition
+// const add = (x) => x + 1;
+// const multiply = (x) => x * 2;
+
+// const composedFunction = function (fn, fn2) {
+//   return (value) => {
+//     return fn(fn2(value));
+//   };
+// };
+
+// const addMultiply = composedFunction(multiply, add);
+// console.log(addMultiply(5));
+
+/**
+ * * Suppose you need to process a user’s name by trimming spaces,
+ * * converting to lowercase, and capitalizing the first letter.
+ */
+
+// const trimWord = (str) => str.trim();
+// const lowercaseWord = (str) => str.toLowerCase();
+// const capitalizeFirstLetter = (str) =>
+//   str.charAt(0).toUpperCase() + str.slice(1);
+
+// const composedFunction = function (...fns) {
+//   return (str) => {
+
+//   }
+// };
+
+// composedFunction(capitalizeFirstLetter, lowercaseWord, trimWord);
+
+// [0, 1, 2, 3, 4].reduceRight((accumulator, currentValue, index) => {
+//   console.log({ accumulator });
+//   console.log({ currentValue });
+//   console.log({ index });
+//   console.log("------");
+// });
+
+// const numbers = [1, 2, 3];
+
+// console.log(numbers.every((n) => n > 0));
+// console.log(numbers.some((n) => n > 5));
+
+// function demo() {
+//   console.log(arguments);
+//   console.log(Array.from(arguments));
+// }
+
+// demo(1, 2, 3);
+// demo("a", "b", "c", "d");
+
+// create a deep nested array
+// const deepNestedArray = [1, [2, [3, [4, [5, [6, [7, [8, [9, [10]]]]]]]]]];
+
+// console.log(deepNestedArray);
+// console.log(deepNestedArray.flat());
+// console.log(deepNestedArray.flat(2));
+// console.log(deepNestedArray.flat(3));
+// console.log(deepNestedArray.flat(Infinity));
+
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+];
+
+console.log(matrix);
