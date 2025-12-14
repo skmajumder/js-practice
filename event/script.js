@@ -21,22 +21,33 @@
 //   }
 // });
 
-const list = document.getElementById("todo-list");
+// const list = document.getElementById("todo-list");
 
-const addBtn = document.getElementById("add");
+// const addBtn = document.getElementById("add");
 
-// list.addEventListener("click", (e) => {
-//   if (e.target.tagName === "LI") {
-//     console.log("Clicked: ", e.target.textContent);
-//     console.log("ID: ", e.target.dataset.id);
-//   }
+// // list.addEventListener("click", (e) => {
+// //   if (e.target.tagName === "LI") {
+// //     console.log("Clicked: ", e.target.textContent);
+// //     console.log("ID: ", e.target.dataset.id);
+// //   }
+// // });
+
+// addBtn.addEventListener("click", () => {
+//   const li = document.createElement("li");
+
+//   li.textContent = "New Item";
+//   li.dataset.id = Date.now();
+
+//   list.appendChild(li);
 // });
 
-addBtn.addEventListener("click", () => {
-  const li = document.createElement("li");
+const productsList = document.getElementById("products");
 
-  li.textContent = "New Item";
-  li.dataset.id = Date.now();
+productsList.addEventListener("click", (e) => {
+  const action = e.target.dataset.action;
 
-  list.appendChild(li);
+  if (!action) return;
+
+  if (action === "buy") console.log("Buying a Product");
+  if (action === "wishlist") console.log("Adding to Wishlist");
 });
