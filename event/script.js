@@ -33,10 +33,10 @@ const addBtn = document.getElementById("add");
 // });
 
 addBtn.addEventListener("click", () => {
-  const liEl = document.createElement("li");
+  const li = document.createElement("li");
 
-  liEl.textContent = "New Item";
-  liEl.dataset.id = Date.now();
+  li.textContent = "New Item";
+  li.dataset.id = Date.now();
 
-  list.appendChild(liEl);
+  list.appendChild(li);
 });
